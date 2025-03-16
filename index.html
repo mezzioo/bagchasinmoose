@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>703 Resells - Premium Streetwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/" async></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID" async></script>
+    <script src="https://cdn.klaviyo.com/on/site.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/@klarna/bank/dist/klarna-bank.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/@afterpay/sdk/dist/afterpay.min.js" async></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">703<span class="logo-highlight">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Premium Streetwear<br>Resold with Style</h1>
+                <p>Discover authentic, limited-edition pieces from the world's most sought-after brands.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary">Shop Now</button>
+                    <button class="cta-button secondary">Join Discord</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="trust-badges">
+            <div class="badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>100% Authentic Products</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-undo"></i>
+                <span>30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-lock"></i>
+                <span>SSL Secure Checkout</span>
+            </div>
+            <div class="badge">
+                <i class="fas fa-truck"></i>
+                <span>Free Shipping Over $100</span>
+            </div>
+        </div>
+
+        <section id="collections">
+            <h2>Featured Collections</h2>
+            <div class="collection-wrapper">
+                <div class="collection-card sp5der">
+                    <div class="collection-image">
+                        <img src="images/sp5der-logo.png" alt="SP5der Collection">
+                    </div>
+                    <div class="collection-info">
+                        <h3>SP5der Collection</h3>
+                        <p>Exclusive streetwear essentials</p>
+                        <div class="collection-buttons">
+                            <button class="view-collection" data-category="sp5der-hoodie">Hoodie</button>
+                            <button class="view-collection" data-category="sp5der-pants">Pants</button>
+                            <button class="view-collection" data-category="sp5der-shirt">Shirt</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-card denim">
+                    <div class="collection-image">
+                        <img src="images/denim-tears-logo.png" alt="Denim Tears Collection">
+                    </div>
+                    <div class="collection-info">
+                        <h3>Denim Tears Collection</h3>
+                        <p>Premium denim and accessories</p>
+                        <div class="collection-buttons">
+                            <button class="view-collection" data-category="denim-hoodie">Hoodie</button>
+                            <button class="view-collection" data-category="denim-shirt">Shirt</button>
+                            <button class="view-collection" data-category="denim-shorts">Shorts</button>
+                            <button class="view-collection" data-category="denim-pants">Pants</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-section" id="shop">
+            <div class="shop-header">
+                <h2>Shop Now</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="sp5der">SP5der</button>
+                    <button class="filter-btn" data-filter="denim">Denim Tears</button>
+                    <button class="filter-btn" data-filter="hoodie">Hoodies</button>
+                    <button class="filter-btn" data-filter="shirt">Shirts</button>
+                    <button class="filter-btn" data-filter="pants">Pants</button>
+                    <button class="filter-btn" data-filter="shorts">Shorts</button>
+                </div>
+            </div>
+            <div class="product-grid">
+                <!-- SP5der Products -->
+                <div class="product-item" data-brand="sp5der" data-type="hoodie">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/sp5der-hoodie.jpg" alt="SP5der Hoodie">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #ff0000" data-color="red"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>SP5der Hoodie</h3>
+                            <p class="price">$150</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-brand="sp5der" data-type="pants">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/sp5der-pants.jpg" alt="SP5der Pants">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #0000ff" data-color="blue"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>SP5der Pants</h3>
+                            <p class="price">$120</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-brand="sp5der" data-type="shirt">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/sp5der-shirt.jpg" alt="SP5der Shirt">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #00ff00" data-color="green"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>SP5der Shirt</h3>
+                            <p class="price">$90</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Denim Tears Products -->
+                <div class="product-item" data-brand="denim" data-type="hoodie">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/denim-hoodie.jpg" alt="Denim Tears Hoodie">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #666666" data-color="gray"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Denim Tears Hoodie</h3>
+                            <p class="price">$140</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-brand="denim" data-type="shirt">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/denim-shirt.jpg" alt="Denim Tears Shirt">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #0000ff" data-color="blue"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Denim Tears Shirt</h3>
+                            <p class="price">$100</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-brand="denim" data-type="shorts">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/denim-shorts.jpg" alt="Denim Tears Shorts">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #ff0000" data-color="red"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Denim Tears Shorts</h3>
+                            <p class="price">$80</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item" data-brand="denim" data-type="pants">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/denim-pants.jpg" alt="Denim Tears Pants">
+                            <div class="product-overlay">
+                                <div class="color-options">
+                                    <button class="color-btn" style="background-color: #000000" data-color="black"></button>
+                                    <button class="color-btn" style="background-color: #ffffff" data-color="white"></button>
+                                    <button class="color-btn" style="background-color: #0000ff" data-color="blue"></button>
+                                </div>
+                                <button class="quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Denim Tears Pants</h3>
+                            <p class="price">$130</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>We specialize in authentic, high-quality streetwear reselling. Our curated collection features the latest drops from SP5der and Denim Tears, ensuring you stay ahead of the game in the streetwear scene.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>1000+</h3>
+                        <p>Items Sold</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>200+</h3>
+                        <p>Exclusive Items</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <div class="contact-wrapper">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Street, City, Country</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+1 234 567 890</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contact@703resells.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#shipping">Shipping</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#size-guide">Size Guide</a></li>
+                    <li><a href="#track-order">Track Order</a></li>
+                    <li><a href="#care-instructions">Care Instructions</a></li>
+                    <li><a href="#authenticity">Authenticity Guarantee</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Subscribe to newsletter">
+                    <button type="submit">→</button>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Payment Methods</h3>
+                <div class="payment-methods">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png" alt="Visa">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Mastercard">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281768.png" alt="American Express">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281766.png" alt="PayPal">
+                    <img src="https://cdn-icons-png.flaticon.com/512/281/281765.png" alt="Apple Pay">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 703 Resells. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
